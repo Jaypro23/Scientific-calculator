@@ -118,6 +118,7 @@
         <input type="text" id="display" disabled>
         <div class="buttons">
             <button class="clear" onclick="clearDisplay()">C</button>
+            <button onclick="backspace()">⌫</button>
             <button onclick="appendToDisplay('7')">7</button>
             <button onclick="appendToDisplay('8')">8</button>
             <button onclick="appendToDisplay('9')">9</button>
@@ -143,6 +144,10 @@
         function clearDisplay() {
             document.getElementById("display").value = "";
         }
+        function backspace() {
+    let display = document.getElementById("display");
+    display.value = display.value.slice(0, -1);
+}
         function calculateResult() {
             try {
                 document.getElementById("display").value = eval(document.getElementById("display").value);
